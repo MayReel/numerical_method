@@ -1,5 +1,8 @@
 function newton_raphson_general()
     equation = input('Enter f(x) : ', 's');
+    equation = replace(equation, '^', '.^');
+    equation = replace(equation, '*', '.*');
+    equation = replace(equation, '/', './');
     f = str2func(['@(x)' equation]);
     fprintf('Here is your function f(x) = %s\n', equation);
     
